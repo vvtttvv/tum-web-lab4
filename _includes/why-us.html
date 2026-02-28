@@ -1,0 +1,11 @@
+<section id="why-us" class="py-10 sm:py-16 md:py-20 bg-gradient-to-br from-white to-mint">
+  <div class="container-main">
+    <h2 class="section-title mb-6 md:mb-10" data-i18n="why.title">De ce să ne alegi?</h2>
+
+    <ul class="max-w-[500px] mx-auto grid gap-4">
+      {% for item in site.data.why_us %}
+      <li class="why-item" data-i18n="why.r{{ forloop.index }}">{{ item.text_ro }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

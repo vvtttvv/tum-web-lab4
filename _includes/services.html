@@ -1,0 +1,15 @@
+<section id="products" class="py-10 sm:py-16 md:py-20">
+  <div class="container-main">
+    <h2 class="section-title mb-6 md:mb-12" data-i18n="services.title">Serviciile noastre</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
+      {% for service in site.data.services %}
+      <article class="service-card">
+        <img src="{{ service.image | relative_url }}" alt="{{ service.alt_ro }}" class="card-img" data-i18n-alt="services.s{{ forloop.index }}.alt" />
+        <h3 class="card-title" data-i18n="services.s{{ forloop.index }}.name">{{ service.name_ro }}</h3>
+        <p data-i18n="services.s{{ forloop.index }}.desc">{{ service.desc_ro }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
