@@ -1,0 +1,159 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "page",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Layout",
+          "name": "layout",
+          "type": "string",
+          "default": "default"
+        }
+      ]
+    }
+  ],
+  "frontMatter.taxonomy.seoTitleLength": 72,
+  "frontMatter.taxonomy.seoDescriptionLength": 160,
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Pages",
+      "path": "[[workspace]]"
+    }
+  ],
+  "frontMatter.data.types": [
+    {
+      "id": "services",
+      "schema": {
+        "title": "Service",
+        "type": "object",
+        "required": ["name_ro", "name_ru", "image"],
+        "properties": {
+          "name_ro": {
+            "title": "Название (RO)",
+            "type": "string"
+          },
+          "name_ru": {
+            "title": "Название (RU)",
+            "type": "string"
+          },
+          "desc_ro": {
+            "title": "Описание (RO)",
+            "type": "string"
+          },
+          "desc_ru": {
+            "title": "Описание (RU)",
+            "type": "string"
+          },
+          "alt_ro": {
+            "title": "Alt текст (RO)",
+            "type": "string"
+          },
+          "alt_ru": {
+            "title": "Alt текст (RU)",
+            "type": "string"
+          },
+          "image": {
+            "title": "Изображение",
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "id": "why_us",
+      "schema": {
+        "title": "Why Us Item",
+        "type": "object",
+        "required": ["text_ro", "text_ru"],
+        "properties": {
+          "text_ro": {
+            "title": "Текст (RO)",
+            "type": "string"
+          },
+          "text_ru": {
+            "title": "Текст (RU)",
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "id": "site_info",
+      "schema": {
+        "title": "Site Info",
+        "type": "object",
+        "required": ["name", "phone"],
+        "properties": {
+          "name": {
+            "title": "Название сайта",
+            "type": "string"
+          },
+          "phone": {
+            "title": "Телефон (с +)",
+            "type": "string"
+          },
+          "phone_display": {
+            "title": "Телефон (отображение)",
+            "type": "string"
+          },
+          "whatsapp": {
+            "title": "WhatsApp номер",
+            "type": "string"
+          },
+          "year": {
+            "title": "Год копирайта",
+            "type": "number"
+          }
+        }
+      }
+    }
+  ],
+  "frontMatter.data.files": [
+    {
+      "id": "services",
+      "title": "Услуги (Services)",
+      "file": "[[workspace]]/_data/services.yml",
+      "fileType": "yaml",
+      "labelField": "name_ro",
+      "schema": {
+        "$ref": "#/frontMatter.data.types/0/schema"
+      }
+    },
+    {
+      "id": "why_us",
+      "title": "Почему мы (Why Us)",
+      "file": "[[workspace]]/_data/why_us.yml",
+      "fileType": "yaml",
+      "labelField": "text_ro",
+      "schema": {
+        "$ref": "#/frontMatter.data.types/1/schema"
+      }
+    },
+    {
+      "id": "site_info",
+      "title": "Информация о сайте (Site Info)",
+      "file": "[[workspace]]/_data/site_info.yml",
+      "fileType": "yaml",
+      "singleEntry": true,
+      "schema": {
+        "$ref": "#/frontMatter.data.types/2/schema"
+      }
+    }
+  ],
+  "frontMatter.content.publicFolder": "mock/images",
+  "frontMatter.framework.id": "jekyll",
+  "frontMatter.preview.host": "http://localhost:4000"
+}
