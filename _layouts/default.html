@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title | default: site.title }}</title>
+
+    <meta name="description" content="{{ page.description | default: site.description }}" />
+    <meta name="keywords" content="masaj, masaj terapeutic, masaj clasic, masaj curativ, masaj anticelulitic, masaj cu miere, masaj creol, masaj cu ventuze, relaxare, wellness" />
+    <meta name="author" content="{{ site.author.name }}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:description" content="{{ page.description | default: site.description }}" />
+    <meta property="og:image" content="{{ '/mock/images/img1.png' | relative_url }}" />
+    <meta property="og:url" content="{{ site.url }}" />
+    <meta property="og:locale" content="ro_RO" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+
+    <link rel="icon" type="image/png" href="{{ '/mock/images/image.png' | relative_url }}" />
+
+    {% seo %}
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#3a7d6e',
+              'primary-dark': '#2d6357',
+              dark: '#2c3e3a',
+              muted: '#6b8a80',
+              'bg-main': '#f4f9f7',
+              mint: '#dff0ea',
+            },
+          },
+        },
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .container-main {
+          @apply max-w-[1100px] mx-auto px-4 md:px-5;
+        }
+        .section-title {
+          @apply text-center text-2xl sm:text-3xl md:text-4xl font-bold;
+        }
+        .nav-link {
+          @apply no-underline text-dark font-medium transition-colors duration-300 hover:text-primary;
+        }
+        .service-card {
+          @apply bg-white w-full sm:w-[300px] p-4 sm:p-6 rounded-[14px] text-center shadow-lg transition-all duration-300 hover:-translate-y-1.5 text-sm sm:text-base;
+        }
+        .card-img {
+          @apply w-[140px] h-[140px] sm:w-[170px] sm:h-[170px] md:w-[200px] md:h-[200px] rounded-full mx-auto;
+        }
+        .card-title {
+          @apply mb-2 sm:mb-2.5 text-primary font-semibold text-sm sm:text-base;
+        }
+        .why-item {
+          @apply bg-white py-3 px-4 md:py-3.5 md:px-5 rounded-[14px] shadow-md text-center text-sm md:text-base;
+        }
+        .form-input {
+          @apply p-3 rounded-[14px] border border-gray-300 text-base;
+        }
+        .btn-primary {
+          @apply bg-primary text-white rounded-full py-3 md:py-3.5 font-semibold transition-all duration-300 hover:bg-primary-dark;
+        }
+        .lang-btn {
+          @apply text-sm font-semibold px-2 py-1 rounded transition-colors duration-200 cursor-pointer bg-transparent border-none;
+        }
+        .lang-btn-active {
+          @apply text-primary;
+        }
+        .lang-btn:not(.lang-btn-active) {
+          @apply text-muted hover:text-dark;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-[Segoe_UI,Tahoma,Geneva,Verdana,sans-serif] bg-bg-main text-dark leading-relaxed">
+
+    {{ content }}
+
+    {% include scripts.html %}
+  </body>
+</html>
